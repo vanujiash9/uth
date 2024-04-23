@@ -1,25 +1,21 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
-import "./App.css";
-import "./index.css";
+import "../App";
+import "../components";
 import { isBinaryExpression } from "typescript";
-import Demo2103 from "./components";
+import Demo2103 from "../components";
 
 function App() {
-  const [ketqua1, setKetqua1] = useState<number>(0);
-  const [ketqua2, setKetqua2] = useState<string>('');
-  const [inputValue, setInputvalue] = useState<number>(0);
-  const getBinary = (n: number): string => {
-    let result:string ='';
-    // Code để chuyển số `n` sang dạng nhị phân ở đây
-    return result;
+  const [ketqua1, setKetqua1] = useState(0);
+  const [ketqua2, setKetqua2] = useState('');
+  const [inputValue, setInputvalue] = useState(0);
+
+  const getBinary = (n: number) => {
+    return n.toString(2);
   }
 
   function handleClick() {
-    let ketqua: number = 1; // Khởi tạo giá trị cho ketqua
-    for(let i = 1; i <= inputValue; i++){
-      ketqua *= i; // Sử dụng i thay vì ketqua
-    }
+    const ketqua = Math.pow(inputValue, inputValue);
     setKetqua1(ketqua);
     setKetqua2(getBinary(inputValue));
   }
@@ -44,4 +40,4 @@ function App() {
   );
 }
 
-export default Demo2103;
+export default App;
